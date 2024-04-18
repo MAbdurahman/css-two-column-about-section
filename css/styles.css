@@ -461,7 +461,7 @@ input[type=number] {
 	letter-spacing: 2px;
 	color: var(--clr-augmented-600);
 
-	background-color: transparent;
+	background-color: var(--clr-augmented-300);
 	border: 3px solid var(--clr-augmented-500);
 	border-radius: 8px;
 	backface-visibility: hidden;
