@@ -445,7 +445,7 @@ input[type=number] {
 	justify-content: start;
 }
 
-a.about__section--link {
+.about__section--link {
 	position: relative;
 	z-index: 1;
 	min-width: 150px;
@@ -472,19 +472,19 @@ a.about__section--link {
 
 }
 @media screen and (max-width: 767px) {
-	a.about__section--link {
+	.about__section--link {
 		font-size: .775rem;
 	}
 }
 @media screen and (max-width: 400px) {
-	a.about__section--link {
+	.about__section--link {
 		font-size: .675rem;
 	}
 }
-a.about__section--link:not(:last-child) {
+.about__section--link:not(:last-child) {
 	margin-right: 1.5em;
 }
-a.about__section--link::before {
+.about__section--link::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -507,13 +507,12 @@ a.about__section--link::before {
 	-o-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
-a.about__section--link:hover,
-a.about__section--link:focus {
-	color: #fff;
+.about__section--link:hover,
+.about__section--link:focus {
 	color: var(--clr-augmented-000);
 	border-color: var(--clr-augmented-500);
 }
-a.about__section--link:hover::before {
+.about__section--link:hover::before {
 	opacity: 1;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
