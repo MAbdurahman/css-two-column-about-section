@@ -54,6 +54,36 @@
 	--clr-augmented-900: hsl(210, 30%, 10%);
 
 
+	/* For browsers that support clamp  */
+	@supports (font-size: clamp(1rem, 1vi, 1rem)) {
+		:root {
+			--ts-text-size-sm: clamp(0.8rem, 0.07vi + 0.79rem, 0.85rem);
+			--ts-text-size-reg: clamp(1rem, 0.2vi + 0.96rem, 1.13rem);
+			--ts-text-size-md: clamp(1.25rem, 0.39vi + 1.17rem, 1.5rem);
+			--ts-text-size-lg: clamp(1.56rem, 0.68vi + 1.43rem, 1.99rem);
+			--ts-text-size-xl: clamp(1.95rem, 1.11vi + 1.73rem, 2.65rem);
+		}
+	}
+	/* For browsers that don't support clamp */
+	@supports not (font-size: clamp(1rem, 1vi, 1rem)) {
+		:root {
+			--ts-text-size-sm: 0.8rem;
+			--ts-text-size-reg: 1rem;
+			--ts-text-size-md: 1.25rem;
+			--ts-text-size-lg: 1.56rem;
+			--ts-text-size-xl: 1.95rem;
+		}
+		@media screen and (min-width: 1320px) {
+			:root {
+				--ts-text-size-sm: 0.85rem;
+				--ts-text-size-reg: 1.13rem;
+				--ts-text-size-md: 1.5rem;
+				--ts-text-size-lg: 1.99rem;
+				--ts-text-size-xl: 2.65rem;
+			}
+		}
+	}
+
 }
 html {
 	font-size: 100%;
@@ -61,13 +91,44 @@ html {
 
 }
 @media screen and (max-width: 768px) {
-	html {
+	/*html {
 		font-size: 83.33%;
-	}
+	}*/
 }
 @media screen and (max-width: 500px){
-	html {
+	/*html {
 		font-size: 70%;
+	}*/
+}
+
+
+/* For browsers that support clamp  */
+@supports (font-size: clamp(1rem, 1vi, 1rem)) {
+	:root {
+		--fs-font-size-sm: clamp(1rem, 0.05vi + 0.99rem, 1.03rem);
+		--fs-font-size-reg: clamp(1.25rem, 0.2vi + 1.21rem, 1.38rem);
+		--fs-font-size-md: clamp(1.56rem, 0.43vi + 1.48rem, 1.83rem);
+		--fs-font-size-lg: clamp(1.95rem, 0.78vi + 1.8rem, 2.44rem);
+		--fs-font-size-xl: clamp(2.44rem, 1.3vi + 2.18rem, 3.26rem);
+	}
+}
+/* For browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vi, 1rem)) {
+	:root {
+		--fs-font-size-sm: 1rem;
+		--fs-font-size-reg: 1.25rem;
+		--fs-font-size-md: 1.56rem;
+		--fs-font-size-lg: 1.95rem;
+		--fs-font-size-xl: 2.44rem;
+	}
+	@media screen and (min-width: 1320px) {
+		:root {
+			--fs-font-size-sm: 1.03rem;
+			--fs-font-size-reg: 1.38rem;
+			--fs-font-size-md: 1.83rem;
+			--fs-font-size-lg: 2.44rem;
+			--fs-font-size-xl: 3.26rem;
+		}
 	}
 }
 
@@ -81,6 +142,7 @@ body {
 	grid-template-rows: auto 1fr auto;
 	font-family: 'Open Sans', sans-serif;
 	font-optical-sizing: auto;
+	/*font-size: var(--ts-text-size-reg);*/
 	font-weight: 400;
 	line-height: 1.5;
 	color: var(--clr-augmented-900);
@@ -109,6 +171,7 @@ h1 {
 
 h2 {
 	font-size: 2.441rem;
+	font-size: var(--fs-font-size-lg);
 }
 
 h3 {
@@ -270,6 +333,8 @@ input[type=number] {
 	width: 100%;
 	display: grid;
 	grid-template-rows: auto 1fr;
+	padding-top: 2em;
+	padding-bottom: 2em;
 
 }
 
@@ -329,6 +394,7 @@ input[type=number] {
 
 .about__info--text {
 	font-size: 1.125rem;
+	font-size: var(--ts-text-size-md);
 	text-align: left;
 	line-height: 1.5;
 	letter-spacing: 1px;
@@ -359,6 +425,7 @@ input[type=number] {
 	vertical-align: middle;
 
 	font-size: 1rem;
+	/*font-size: var(--ts-text-size-sm);*/
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -373,6 +440,16 @@ input[type=number] {
 	transition: border-color 0.4s, color 0.4s;
 	-webkit-transition: border-color 0.4s, color 0.4s;
 
+}
+@media screen and (max-width: 767px) {
+	.about__section--link {
+		font-size: .775rem;
+	}
+}
+@media screen and (max-width: 400px) {
+	.about__section--link {
+		font-size: .675rem;
+	}
 }
 .about__section--link:not(:last-child) {
 	margin-right: 1.5em;
