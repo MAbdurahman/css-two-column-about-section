@@ -478,7 +478,7 @@ input[type=number] {
 }
 @media screen and (max-width: 400px) {
 	.about__section--link {
-		font-size: .675rem;
+		font-size: .625rem;
 	}
 }
 .about__section--link:not(:last-child) {
