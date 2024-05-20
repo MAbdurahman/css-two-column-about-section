@@ -371,7 +371,7 @@ input[type=number] {
 	min-height: fit-content();
 	display: -ms-grid;
 	display: grid;
-	-ms-grid-columns: .35fr 1.5rem .65fr;
+	-ms-grid-columns: .35fr .65fr;
 	grid-template-columns: .35fr .65fr;
 	-webkit-column-gap: 1.5rem;
 	-moz-column-gap: 1.5rem;
